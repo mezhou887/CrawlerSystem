@@ -21,7 +21,7 @@ public class Test {
             proxyArray = (Proxy[]) HttpClientUtil.deserializeObject("proxies");
             System.out.println(proxyArray.length);
         } catch (Exception e) {
-            e.printStackTrace();
+        	logger.error(e);
         }
     }
 }

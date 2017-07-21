@@ -132,7 +132,7 @@ public class ZhiHuHttpClient extends AbstractHttpClient implements IHttpClient {
 //        try {
 //            jsContent = HttpClientUtil.getWebPage(jsSrc);
 //        } catch (IOException e) {
-//            e.printStackTrace();
+//            logger.error(e);
 //        }
         GeneralPageTask jsPageTask = new GeneralPageTask(jsSrc, true);
         jsPageTask.run();
@@ -176,7 +176,7 @@ public class ZhiHuHttpClient extends AbstractHttpClient implements IHttpClient {
                             cn.close();
                         }
                     } catch (SQLException e) {
-                        e.printStackTrace();
+                    	logger.error(e);
                     }
                 }
                 //关闭代理检测线程池
@@ -192,7 +192,7 @@ public class ZhiHuHttpClient extends AbstractHttpClient implements IHttpClient {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+            	logger.error(e);
             }
         }
     }

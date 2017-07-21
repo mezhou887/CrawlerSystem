@@ -194,9 +194,9 @@ public class HttpClientUtil {
 			fos.close();
 			oos.close();
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+			logger.error(e);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error(e);
 		}
 	}
 	/**
@@ -259,7 +259,7 @@ public class HttpClientUtil {
 					os.close();
 					logger.info(fileURL + "--文件成功下载至" + path + saveFileName);
 				} catch (IOException e) {
-					e.printStackTrace();
+					logger.error(e);
 				}
 			}
 			else{
@@ -320,7 +320,7 @@ public class HttpClientUtil {
 		try {
 			entity = new UrlEncodedFormEntity(formParams, "utf-8");
 		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
+			logger.error(e);
 		}
 		request.setEntity(entity);
 	}

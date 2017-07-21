@@ -8,15 +8,19 @@ import com.mezhou887.parse.ListPageParser;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
 import com.mezhou887.zhihu.entity.User;
+import com.mezhou887.zhihu.task.GeneralPageTask;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 /**
  * 用户详情列表页
  */
 public class ZhiHuUserListPageParser implements ListPageParser{
+	private static Logger logger = Logger.getLogger(ZhiHuUserListPageParser.class);
     private static ZhiHuUserListPageParser instance;
     public static ZhiHuUserListPageParser getInstance(){
         if (instance == null){
@@ -83,7 +87,7 @@ public class ZhiHuUserListPageParser implements ListPageParser{
         } catch (PathNotFoundException e1) {
             //no results
         } catch (Exception e){
-            e.printStackTrace();
+        	logger.error(e);
         }
     }
 

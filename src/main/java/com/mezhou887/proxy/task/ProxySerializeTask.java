@@ -20,7 +20,7 @@ public class ProxySerializeTask implements Runnable{
             try {
                 Thread.sleep(1000 * 60 * 1);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+            	logger.error(e);
             }
             Proxy[] proxyArray = null;
             ProxyPool.lock.readLock().lock();

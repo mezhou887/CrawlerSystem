@@ -20,7 +20,7 @@ public abstract class AbstractHttpClient {
             CloseableHttpResponse response = HttpClientUtil.getResponse(url);
             return response.getEntity().getContent();
         } catch (IOException e) {
-            e.printStackTrace();
+        	logger.error(e);
         }
         return null;
     }
@@ -40,12 +40,12 @@ public abstract class AbstractHttpClient {
                 page.setHtml(EntityUtils.toString(response.getEntity(), charset));
             }
         } catch (IOException e) {
-            e.printStackTrace();
+        	logger.error(e);
         } finally {
             try {
                 response.close();
             } catch (IOException e) {
-                e.printStackTrace();
+            	logger.error(e);
             }
         }
         return page;

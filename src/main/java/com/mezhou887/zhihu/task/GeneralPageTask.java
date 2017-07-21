@@ -1,5 +1,7 @@
 package com.mezhou887.zhihu.task;
 
+import org.apache.log4j.Logger;
+
 import com.mezhou887.zhihu.entity.Page;
 
 /**
@@ -7,6 +9,7 @@ import com.mezhou887.zhihu.entity.Page;
  * 下载初始化authorization字段页面
  */
 public class GeneralPageTask extends ZhihuPageTask {
+	private static Logger logger = Logger.getLogger(GeneralPageTask.class);
     private Page page = null;
 
     public GeneralPageTask(String url, boolean proxyFlag) {
@@ -18,7 +21,7 @@ public class GeneralPageTask extends ZhihuPageTask {
         try {
             Thread.sleep(100);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+        	logger.error(e);
         }
         this.run();//继续下载
     }

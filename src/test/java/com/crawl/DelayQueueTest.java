@@ -26,7 +26,7 @@ public class DelayQueueTest {
             p = proxyQueue.take();
             System.out.println("出队成功:" + p.toString());
         } catch (InterruptedException e) {
-            e.printStackTrace();
+        	logger.error(e);
         }
     }
 }

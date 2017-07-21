@@ -47,9 +47,9 @@ public class ZhiHuDAO {
             rs.close();
             st.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+        	logger.error(e);
         } catch (IOException e) {
-            e.printStackTrace();
+        	logger.error(e);
         }
     }
     /**
@@ -110,7 +110,7 @@ public class ZhiHuDAO {
             pstmt.close();
             logger.info("插入数据库成功---" + u.getUsername());
         } catch (SQLException e) {
-            e.printStackTrace();
+        	logger.error(e);
         } finally {
 //            ConnectionManager.close();
         }
@@ -129,7 +129,7 @@ public class ZhiHuDAO {
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+        	logger.error(e);
         }
         return false;
     }
@@ -153,7 +153,7 @@ public class ZhiHuDAO {
             pstmt.executeUpdate();
             pstmt.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+        	logger.error(e);
         }
         logger.debug("url插入成功---");
         return true;
@@ -173,7 +173,7 @@ public class ZhiHuDAO {
             pstmt.close();
             logger.info("url表删除成功---");
         } catch (SQLException e) {
-            e.printStackTrace();
+        	logger.error(e);
         }
     }
 }

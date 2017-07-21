@@ -8,6 +8,7 @@ import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
 import com.mezhou887.zhihu.entity.User;
 
+import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -20,6 +21,8 @@ import java.util.regex.Pattern;
  * 新版following页面解析出用户详细信息
  */
 public class ZhiHuNewUserDetailPageParser implements DetailPageParser {
+	
+	private static Logger logger = Logger.getLogger(ZhiHuNewUserDetailPageParser.class);
 	
     private volatile static ZhiHuNewUserDetailPageParser instance;
     public static ZhiHuNewUserDetailPageParser getInstance(){
@@ -100,7 +103,7 @@ public class ZhiHuNewUserDetailPageParser implements DetailPageParser {
         } catch (PathNotFoundException e1) {
             //no results
         } catch (Exception e){
-            e.printStackTrace();
+        	logger.error(e);
         }
     }
 

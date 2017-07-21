@@ -3,10 +3,13 @@ package com.mezhou887.util;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+
 /**
  * 加载配置文件
  */
 public class Config {
+	private static Logger logger = Logger.getLogger(Config.class);
     /**
      * 是否持久化到数据库
      */
@@ -80,7 +83,7 @@ public class Config {
         try {
             p.load(Config.class.getResourceAsStream("/config.properties"));
         } catch (IOException e) {
-            e.printStackTrace();
+        	logger.error(e);
         }
         dbEnable = Boolean.parseBoolean(p.getProperty("db.enable"));
         verificationCodePath = p.getProperty("verificationCodePath");

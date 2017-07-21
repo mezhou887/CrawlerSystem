@@ -5,9 +5,12 @@ package com.mezhou887.proxy.site;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
 import com.mezhou887.proxy.ProxyListPageParser;
 
 public class ProxyListPageParserFactory {
+	private static Logger logger = Logger.getLogger(ProxyListPageParserFactory.class);
     private static Map<String, ProxyListPageParser> map  = new HashMap<>();
     public static ProxyListPageParser getProxyListPageParser(Class clazz){
         String parserName = clazz.getSimpleName();
@@ -22,9 +25,9 @@ public class ProxyListPageParserFactory {
                 map.put(parserName, parser);
                 return parser;
             } catch (InstantiationException e) {
-                e.printStackTrace();
+            	logger.error(e);
             } catch (IllegalAccessException e) {
-                e.printStackTrace();
+            	logger.error(e);
             }
         }
         return null;

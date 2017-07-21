@@ -44,7 +44,7 @@ public class ModelLogin {
             try {
                 loginState = HttpClientUtil.postRequest(EMAIL_LOGIN_URL, postParams);//登录
             } catch (IOException e) {
-                e.printStackTrace();
+            	logger.error(e);
             }
         }
         else {
@@ -53,7 +53,7 @@ public class ModelLogin {
             try {
                 loginState = HttpClientUtil.postRequest(PHONENUM_LOGIN_URL, postParams);//登录
             } catch (IOException e) {
-                e.printStackTrace();
+            	logger.error(e);
             }
         }
         JSONObject jo = (JSONObject) JSONValue.parse(loginState);

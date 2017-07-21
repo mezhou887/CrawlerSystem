@@ -47,9 +47,9 @@ public class ZhiHuDao1Imp implements ZhiHuDao1{
             st.close();
             cn.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+        	logger.error(e);
         } catch (IOException e) {
-            e.printStackTrace();
+        	logger.error(e);
         }
     }
 
@@ -89,7 +89,7 @@ public class ZhiHuDao1Imp implements ZhiHuDao1{
                 return true;
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+        	logger.error(e);
         }
         return false;
     }
@@ -131,7 +131,7 @@ public class ZhiHuDao1Imp implements ZhiHuDao1{
             pstmt.close();
             logger.info("插入数据库成功---" + u.getUsername());
         } catch (SQLException e) {
-            e.printStackTrace();
+        	logger.error(e);
         } finally {
 //            ConnectionManager.close();
         }
@@ -153,7 +153,7 @@ public class ZhiHuDao1Imp implements ZhiHuDao1{
             pstmt.executeUpdate();
             pstmt.close();
         } catch (SQLException e) {
-            e.printStackTrace();
+        	logger.error(e);
         }
         logger.debug("url插入成功---");
         return true;

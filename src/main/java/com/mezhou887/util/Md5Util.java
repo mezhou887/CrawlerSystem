@@ -2,17 +2,20 @@ package com.mezhou887.util;
 
 import java.security.MessageDigest;
 
+import org.apache.log4j.Logger;
+
 /**
  * md5转换工具
  */
 public class Md5Util {
+	private static Logger logger = Logger.getLogger(Md5Util.class);
 	public static String Convert2Md5(String password){
 		MessageDigest md5 = null;  
         try{  
             md5 = MessageDigest.getInstance("MD5");
         }catch (Exception e){  
             System.out.println(e.toString());  
-            e.printStackTrace();  
+            logger.error(e);  
             return "";  
         }  
         char[] charArray = password.toCharArray();  

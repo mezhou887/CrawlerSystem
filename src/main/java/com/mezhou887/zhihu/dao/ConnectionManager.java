@@ -33,7 +33,7 @@ public class ConnectionManager {
 		try {
 			Class.forName("org.gjt.mm.mysql.Driver") ;//加载驱动
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			logger.error(e);
 		}
 
 	}
@@ -59,7 +59,7 @@ public class ConnectionManager {
 			logger.debug("success!");
 		} catch(MySQLSyntaxErrorException e){
 			logger.error("数据库不存在..请先手动创建创建数据库:" + dbName);
-			e.printStackTrace();
+			logger.error(e);
 		} catch(SQLException e2){
 			logger.error("SQLException",e2);
 		}

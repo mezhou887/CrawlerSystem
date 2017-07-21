@@ -25,7 +25,7 @@ public class Ip181ProxyListPageParser implements ProxyListPageParser {
 //            System.out.println(new String(content.getBytes(GB2312),UTF_8));
 //            content = Charset.defaultCharset().decode(GB2312.encode(content)).toString();
 //        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
+//            logger.error(e);
 //        }
         Document document = Jsoup.parse(content);
         Elements elements = document.select("table tr:gt(0)");

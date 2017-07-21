@@ -32,7 +32,7 @@ public class ThreadPoolMonitor implements Runnable{
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+            	logger.error(e);
                 logger.error("InterruptedException",e);
             }
         }

@@ -7,6 +7,7 @@ import com.mezhou887.util.Constants;
 import com.mezhou887.zhihu.entity.Page;
 
 import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 /**
@@ -14,6 +15,8 @@ import java.util.List;
  * 下载成功解析出用户token，去重,构造用户详情url，获，添加到DetailPageDownloadThreadPool
  */
 public class ListPageTask extends ZhihuPageTask {
+	
+	 private static Logger logger = Logger.getLogger(ListPageTask.class);
 
     public ListPageTask(HttpRequestBase request, boolean proxyFlag) {
         super(request, proxyFlag);
@@ -43,7 +46,7 @@ public class ListPageTask extends ZhihuPageTask {
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
-                e.printStackTrace();  // log
+            	logger.error(e);  // log
             }
         }
         if(!existUserFlag || zhiHuHttpClient.getDetailPageThreadPool().getActiveCount() == 0){
