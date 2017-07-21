@@ -1,5 +1,6 @@
 package com.mezhou887.crawler.httpclient;
 
+import org.apache.http.HttpStatus;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpRequestBase;
@@ -36,7 +37,7 @@ public abstract class AbstractHttpClient {
         page.setStatusCode(response.getStatusLine().getStatusCode());
         page.setUrl(url);
         try {
-            if(page.getStatusCode() == 200){
+            if(page.getStatusCode() == HttpStatus.SC_OK){
                 page.setHtml(EntityUtils.toString(response.getEntity(), charset));
             }
         } catch (IOException e) {

@@ -49,10 +49,8 @@ public class ProxyHttpClient extends AbstractHttpClient implements IHttpClient {
     
     // 初始化线程池
     private void initThreadPool(){
-        proxyTestThreadExecutor = new SimpleThreadPoolExecutor(100, 100, 0L, TimeUnit.MILLISECONDS, 
-        		new LinkedBlockingQueue<Runnable>(10000), new ThreadPoolExecutor.DiscardPolicy(), "proxyTestThreadExecutor");
-        proxyDownloadThreadExecutor = new SimpleThreadPoolExecutor(10, 10, 0L, TimeUnit.MILLISECONDS,
-                new LinkedBlockingQueue<Runnable>(), "proxyDownloadThreadExecutor");
+        proxyTestThreadExecutor = new SimpleThreadPoolExecutor(100, 100, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(10000), new ThreadPoolExecutor.DiscardPolicy(), "proxyTestThreadExecutor");
+        proxyDownloadThreadExecutor = new SimpleThreadPoolExecutor(10, 10, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(), "proxyDownloadThreadExecutor");
 
         new Thread(new ThreadPoolMonitor(proxyTestThreadExecutor, "ProxyTestThreadPool")).start();
         new Thread(new ThreadPoolMonitor(proxyDownloadThreadExecutor, "ProxyDownloadThreadExecutor")).start();

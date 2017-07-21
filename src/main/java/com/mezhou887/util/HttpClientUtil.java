@@ -167,7 +167,7 @@ public class HttpClientUtil {
 		httpClientContext.setCookieStore(cookieStore);
 		CloseableHttpResponse response = httpClient.execute(request, httpClientContext);
 //		int statusCode = response.getStatusLine().getStatusCode();
-//		if(statusCode != 200){
+//		if(statusCode != HttpStatus.SC_OK){
 //			throw new IOException("status code is:" + statusCode);
 //		}
 		return response;

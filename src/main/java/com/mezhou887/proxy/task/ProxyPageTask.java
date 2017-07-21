@@ -33,9 +33,7 @@ public class ProxyPageTask implements Runnable {
 	private Proxy currentProxy;//当前线程使用的代理
 
 	protected static ProxyHttpClient proxyHttpClient = ProxyHttpClient.getInstance();
-	private ProxyPageTask(){
 
-	}
 	public ProxyPageTask(String url, boolean proxyFlag){
 		this.url = url;
 		this.proxyFlag = proxyFlag;

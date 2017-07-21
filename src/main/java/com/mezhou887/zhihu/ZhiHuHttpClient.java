@@ -26,9 +26,8 @@ public class ZhiHuHttpClient extends AbstractHttpClient implements IHttpClient {
 	
     private static Logger logger = Logger.getLogger(ZhiHuHttpClient.class);
     private volatile static ZhiHuHttpClient instance;
-    /**
-     * 统计用户数量
-     */
+
+    // 统计用户数量
     public static AtomicInteger parseUserCount = new AtomicInteger(0);
     private static long startTime = System.currentTimeMillis();
     public static volatile boolean isStop = false;
@@ -69,27 +68,23 @@ public class ZhiHuHttpClient extends AbstractHttpClient implements IHttpClient {
      */
     @Override
     public void initHttpClient() {
-//        if(Config.dbEnable){
-//            ZhiHuDao1Imp.DBTablesInit();
-//        }
+//        ZhiHuDao1Imp.DBTablesInit();
     }
 
     /**
      * 初始化线程池
      */
     private void intiThreadPool(){
-        detailPageThreadPool = new SimpleThreadPoolExecutor(50, 50, 0L, TimeUnit.MILLISECONDS,
-                new LinkedBlockingQueue<Runnable>(), "detailPageThreadPool");
-        listPageThreadPool = new SimpleThreadPoolExecutor(50, 80, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(5000),
-                new ThreadPoolExecutor.DiscardPolicy(), "listPageThreadPool");
+        detailPageThreadPool = new SimpleThreadPoolExecutor(50, 50, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(), "detailPageThreadPool");
+        listPageThreadPool = new SimpleThreadPoolExecutor(50, 80, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(5000), new ThreadPoolExecutor.DiscardPolicy(), "listPageThreadPool");
         new Thread(new ThreadPoolMonitor(detailPageThreadPool, "DetailPageDownloadThreadPool")).start();
         new Thread(new ThreadPoolMonitor(listPageThreadPool, "ListPageDownloadThreadPool")).start();
         
-        detailListPageThreadPool = new SimpleThreadPoolExecutor(50, 50, 0L, TimeUnit.MILLISECONDS,
-                new LinkedBlockingQueue<Runnable>(2000), new ThreadPoolExecutor.DiscardPolicy(), "detailListPageThreadPool");
+        detailListPageThreadPool = new SimpleThreadPoolExecutor(50, 50, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(2000), new ThreadPoolExecutor.DiscardPolicy(), "detailListPageThreadPool");
         new Thread(new ThreadPoolMonitor(detailListPageThreadPool, "DetailListPageThreadPool")).start();
 
     }
+    
     public void startCrawl(String url){
         detailPageThreadPool.execute(new DetailPageTask(url, Config.isProxy));
         manageHttpClient();

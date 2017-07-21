@@ -7,6 +7,7 @@ import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
 
 import org.apache.http.HttpHost;
+import org.apache.http.HttpStatus;
 import org.apache.http.client.config.CookieSpecs;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
@@ -17,14 +18,15 @@ import java.io.IOException;
 /**
  * 代理检测task
  * 通过访问知乎首页，能否正确响应
- * 将可用代理添加到DelayQueue延时队列中
+ * 如果可用，则将可用代理添加到DelayQueue延时队列中
  */
-public class ProxyTestTask implements Runnable{
+public class ProxyTestTask implements Runnable {
     private final static Logger logger = Logger.getLogger(ProxyTestTask.class);
     private Proxy proxy;
     public ProxyTestTask(Proxy proxy){
         this.proxy = proxy;
     }
+    
     @Override
     public void run() {
         long startTime = System.currentTimeMillis();
@@ -40,7 +42,7 @@ public class ProxyTestTask implements Runnable{
             Page page = ZhiHuHttpClient.getInstance().getWebPage(request);
             long endTime = System.currentTimeMillis();
             String logStr = Thread.currentThread().getName() + " " + proxy.getProxyStr() + "  executing request " + page.getUrl()  + " response statusCode:" + page.getStatusCode() + "  request cost time:" + (endTime - startTime) + "ms";
-            if (page == null || page.getStatusCode() != 200){
+            if (page == null || page.getStatusCode() != HttpStatus.SC_OK){
                 logger.warn(logStr);
                 return;
             }
@@ -55,8 +57,5 @@ public class ProxyTestTask implements Runnable{
                 request.releaseConnection();
             }
         }
-    }
-    private String getProxyStr(){
-        return proxy.getIp() + ":" + proxy.getPort();
     }
 }
