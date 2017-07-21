@@ -3,9 +3,12 @@ package com.crawl;
 
 import static com.mezhou887.proxy.ProxyPool.proxyQueue;
 
+import org.apache.log4j.Logger;
+
 import com.mezhou887.proxy.entity.Proxy;
 
 public class DelayQueueTest {
+	private static Logger logger = Logger.getLogger(DelayQueueTest.class);
     public static void main(String[] args){
         Proxy proxy = new Proxy("123", 123, 0);
         proxy.setSuccessfulTotalTime(1000);

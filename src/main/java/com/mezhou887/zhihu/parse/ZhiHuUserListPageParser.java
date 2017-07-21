@@ -8,7 +8,6 @@ import com.mezhou887.parse.ListPageParser;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
 import com.mezhou887.zhihu.entity.User;
-import com.mezhou887.zhihu.task.GeneralPageTask;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

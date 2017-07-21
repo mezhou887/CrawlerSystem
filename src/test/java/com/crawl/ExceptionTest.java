@@ -3,7 +3,6 @@ package com.crawl;
 
 import org.apache.log4j.Logger;
 
-import com.mezhou887.system.task.AbstractPageTask;
 
 import java.io.IOException;
 

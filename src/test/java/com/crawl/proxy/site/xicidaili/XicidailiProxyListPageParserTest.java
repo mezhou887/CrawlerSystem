@@ -4,7 +4,6 @@ package com.crawl.proxy.site.xicidaili;
 import org.apache.http.HttpHost;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.RequestBuilder;
 import org.junit.Test;
 
 import com.mezhou887.proxy.ProxyHttpClient;
@@ -14,7 +13,6 @@ import com.mezhou887.util.HttpClientUtil;
 import com.mezhou887.zhihu.entity.Page;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.List;
 
 public class XicidailiProxyListPageParserTest {

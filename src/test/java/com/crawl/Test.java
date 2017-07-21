@@ -1,15 +1,13 @@
 package com.crawl;
 
-import org.apache.http.client.methods.HttpGet;
+import org.apache.log4j.Logger;
 
 import com.mezhou887.proxy.ProxyPool;
 import com.mezhou887.proxy.entity.Proxy;
 import com.mezhou887.util.HttpClientUtil;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class Test {
+	private static Logger logger = Logger.getLogger(Test.class);
     public static int j = 0;
     public static void main(String[] args){
         Proxy proxy = new Proxy("123456",8080, 1000);

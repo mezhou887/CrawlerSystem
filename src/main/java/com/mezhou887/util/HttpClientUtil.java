@@ -1,7 +1,5 @@
 package com.mezhou887.util;
 
-import com.mezhou887.proxy.entity.Proxy;
-
 import org.apache.http.*;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.HttpRequestRetryHandler;

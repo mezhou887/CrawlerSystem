@@ -3,7 +3,6 @@ package com.mezhou887.proxy.site.mimiip;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import com.mezhou887.proxy.ProxyListPageParser;

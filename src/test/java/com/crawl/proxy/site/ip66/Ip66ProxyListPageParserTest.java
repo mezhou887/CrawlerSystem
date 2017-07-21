@@ -1,9 +1,6 @@
 package com.crawl.proxy.site.ip66;
 
 
-import org.apache.http.HttpHost;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.methods.HttpGet;
 import org.junit.Test;
 
 import com.mezhou887.proxy.ProxyHttpClient;
