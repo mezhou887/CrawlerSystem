@@ -7,7 +7,6 @@ import com.mezhou887.util.Config;
 import com.mezhou887.util.Constants;
 import com.mezhou887.util.Md5Util;
 import com.mezhou887.util.SimpleInvocationHandler;
-import com.mezhou887.util.SimpleLogger;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
 import com.mezhou887.zhihu.entity.User;
@@ -30,7 +29,7 @@ import static com.mezhou887.zhihu.ZhiHuHttpClient.parseUserCount;
  * 知乎用户列表详情页task
  */
 public class DetailListPageTask extends ZhihuPageTask {
-    private static Logger logger = SimpleLogger.getSimpleLogger(DetailListPageTask.class);
+    private static Logger logger = Logger.getLogger(DetailListPageTask.class);
     private static ListPageParser proxyUserListPageParser;
     /**
      * Thread-数据库连接

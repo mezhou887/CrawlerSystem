@@ -18,7 +18,6 @@ import org.apache.http.config.Registry;
 import org.apache.http.config.RegistryBuilder;
 import org.apache.http.config.SocketConfig;
 import org.apache.http.conn.ConnectTimeoutException;
-import org.apache.http.conn.HttpHostConnectException;
 import org.apache.http.conn.socket.ConnectionSocketFactory;
 import org.apache.http.conn.socket.PlainConnectionSocketFactory;
 import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
@@ -48,14 +47,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import static com.mezhou887.util.Constants.TIME_INTERVAL;
-
-
 /**
  * HttpClient工具类
  */
 public class HttpClientUtil {
-	private static Logger logger = SimpleLogger.getSimpleLogger(HttpClientUtil.class);
+	private static Logger logger = Logger.getLogger(HttpClientUtil.class);
     private static CookieStore cookieStore = new BasicCookieStore();
 	private static CloseableHttpClient httpClient;
 	private final static String userAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.110 Safari/537.36";

@@ -5,7 +5,6 @@ import com.mezhou887.proxy.entity.Proxy;
 import com.mezhou887.util.Config;
 import com.mezhou887.util.HttpClientUtil;
 import com.mezhou887.util.ProxyUtil;
-import com.mezhou887.util.SimpleLogger;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 
 import org.apache.log4j.Logger;
@@ -14,7 +13,7 @@ import org.apache.log4j.Logger;
  * 代理序列化
  */
 public class ProxySerializeTask implements Runnable{
-    private static Logger logger = SimpleLogger.getSimpleLogger(ProxyPageTask.class);
+    private static Logger logger = Logger.getLogger(ProxySerializeTask.class);
     @Override
     public void run() {
         while (!ZhiHuHttpClient.isStop){

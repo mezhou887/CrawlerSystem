@@ -5,7 +5,6 @@ import com.mezhou887.parse.DetailPageParser;
 import com.mezhou887.util.Config;
 import com.mezhou887.util.Constants;
 import com.mezhou887.util.SimpleInvocationHandler;
-import com.mezhou887.util.SimpleLogger;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
 import com.mezhou887.zhihu.entity.User;
@@ -24,7 +23,7 @@ import static com.mezhou887.zhihu.ZhiHuHttpClient.parseUserCount;
  * 下载成功解析出用户信息并添加到数据库，获取该用户的关注用户list url，添加到ListPageDownloadThreadPool
  */
 public class DetailPageTask extends ZhihuPageTask {
-    private static Logger logger = SimpleLogger.getSimpleLogger(DetailPageTask.class);
+    private static Logger logger = Logger.getLogger(DetailPageTask.class);
     private static DetailPageParser proxyDetailPageParser;
     static {
         proxyDetailPageParser = getProxyDetailParser();

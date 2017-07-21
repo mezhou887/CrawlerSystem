@@ -7,14 +7,13 @@ import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 
 import com.mezhou887.util.HttpClientUtil;
-import com.mezhou887.util.SimpleLogger;
 import com.mezhou887.zhihu.entity.Page;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 public abstract class AbstractHttpClient {
-    private Logger logger = SimpleLogger.getSimpleLogger(AbstractHttpClient.class);
+    private Logger logger = Logger.getLogger(AbstractHttpClient.class);
     
     public InputStream getWebPageInputStream(String url){
         try {

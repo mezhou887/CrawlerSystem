@@ -1,6 +1,5 @@
 package com.mezhou887.zhihu.dao;
 
-import com.mezhou887.util.SimpleLogger;
 import com.mezhou887.zhihu.entity.User;
 
 import org.apache.log4j.Logger;
@@ -10,7 +9,7 @@ import java.sql.*;
 import java.util.Properties;
 
 public class ZhiHuDAO {
-    private static Logger logger = SimpleLogger.getSimpleLogger(ZhiHuDAO.class);
+    private static Logger logger = Logger.getLogger(ZhiHuDAO.class);
 //    private static Connection cn = ConnectionManager.getConnection();
 
     /**

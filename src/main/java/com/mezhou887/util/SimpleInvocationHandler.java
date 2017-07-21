@@ -8,8 +8,8 @@ import java.lang.reflect.Method;
 /**
  * 动态代理
  */
-public class SimpleInvocationHandler implements InvocationHandler{
-    private static Logger logger = SimpleLogger.getSimpleLogger(HttpClientUtil.class);
+public class SimpleInvocationHandler implements InvocationHandler {
+    private static Logger logger = Logger.getLogger(SimpleInvocationHandler.class);
 
     private Object target;
 

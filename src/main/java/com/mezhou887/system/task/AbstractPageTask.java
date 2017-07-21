@@ -6,7 +6,6 @@ import com.mezhou887.util.ProxyUtil;
 import com.mezhou887.proxy.ProxyPool;
 import com.mezhou887.proxy.entity.Direct;
 import com.mezhou887.proxy.entity.Proxy;
-import com.mezhou887.util.SimpleLogger;
 import com.mezhou887.zhihu.entity.Page;
 import org.apache.http.HttpHost;
 import org.apache.http.HttpStatus;
@@ -22,7 +21,7 @@ import java.io.IOException;
  * @see ProxyPool
  */
 public abstract class AbstractPageTask implements Runnable {
-	private static Logger logger = SimpleLogger.getSimpleLogger(AbstractPageTask.class);
+	private static Logger logger = Logger.getLogger(AbstractPageTask.class);
 	protected String url;
 	protected HttpRequestBase request;
 	protected boolean proxyFlag;//是否通过代理下载

@@ -7,7 +7,6 @@ import com.mezhou887.crawler.httpclient.AbstractHttpClient;
 import com.mezhou887.crawler.httpclient.IHttpClient;
 import com.mezhou887.proxy.ProxyHttpClient;
 import com.mezhou887.util.Config;
-import com.mezhou887.util.SimpleLogger;
 import com.mezhou887.util.SimpleThreadPoolExecutor;
 import com.mezhou887.util.ThreadPoolMonitor;
 
@@ -25,7 +24,7 @@ import com.mezhou887.util.Constants;
 
 public class ZhiHuHttpClient extends AbstractHttpClient implements IHttpClient {
 	
-    private static Logger logger = SimpleLogger.getSimpleLogger(ZhiHuHttpClient.class);
+    private static Logger logger = Logger.getLogger(ZhiHuHttpClient.class);
     private volatile static ZhiHuHttpClient instance;
     /**
      * 统计用户数量

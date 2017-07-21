@@ -6,7 +6,6 @@ import org.apache.log4j.Logger;
 
 import com.mezhou887.util.Config;
 import com.mezhou887.util.HttpClientUtil;
-import com.mezhou887.util.SimpleLogger;
 
 import java.io.IOException;
 import java.util.*;
@@ -16,7 +15,7 @@ import java.util.*;
  * 模拟登录知乎
  */
 public class ModelLogin {
-    private static Logger logger = SimpleLogger.getSimpleLogger(ModelLogin.class);
+    private static Logger logger = Logger.getLogger(ModelLogin.class);
 
     //邮箱登录地址
     final private static String EMAIL_LOGIN_URL = "https://www.zhihu.com/login/email";

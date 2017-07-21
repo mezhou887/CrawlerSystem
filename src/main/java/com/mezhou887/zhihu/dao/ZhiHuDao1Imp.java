@@ -3,7 +3,6 @@ package com.mezhou887.zhihu.dao;
 
 import org.apache.log4j.Logger;
 
-import com.mezhou887.util.SimpleLogger;
 import com.mezhou887.zhihu.entity.User;
 
 import java.io.IOException;
@@ -11,7 +10,7 @@ import java.sql.*;
 import java.util.Properties;
 
 public class ZhiHuDao1Imp implements ZhiHuDao1{
-    private static Logger logger = SimpleLogger.getSimpleLogger(ZhiHuDao1.class);
+    private static Logger logger = Logger.getLogger(ZhiHuDao1Imp.class);
     public static void DBTablesInit() {
         ResultSet rs = null;
         Properties p = new Properties();

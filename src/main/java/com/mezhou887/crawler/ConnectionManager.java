@@ -1,7 +1,6 @@
 package com.mezhou887.crawler;
 
 import com.mezhou887.util.Config;
-import com.mezhou887.util.SimpleLogger;
 import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
 import org.apache.log4j.Logger;
 
@@ -13,7 +12,7 @@ import java.sql.SQLException;
  * DB Connection管理
  */
 public class ConnectionManager {
-	private static Logger logger = SimpleLogger.getSimpleLogger(ConnectionManager.class);
+	private static Logger logger = Logger.getLogger(ConnectionManager.class);
 	private static Connection conn;
 	public static Connection getConnection(){
 		//获取数据库连接

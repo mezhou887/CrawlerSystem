@@ -9,7 +9,6 @@ import com.mezhou887.proxy.site.ProxyListPageParserFactory;
 import com.mezhou887.util.Config;
 import com.mezhou887.util.Constants;
 import com.mezhou887.util.HttpClientUtil;
-import com.mezhou887.util.SimpleLogger;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
 
@@ -28,7 +27,7 @@ import static com.mezhou887.proxy.ProxyPool.proxyQueue;
  * 若下载失败，通过代理去下载代理网页
  */
 public class ProxyPageTask implements Runnable {
-	private static Logger logger = SimpleLogger.getSimpleLogger(ProxyPageTask.class);
+	private static Logger logger = Logger.getLogger(ProxyPageTask.class);
 	protected String url;
 	private boolean proxyFlag;//是否通过代理下载
 	private Proxy currentProxy;//当前线程使用的代理
