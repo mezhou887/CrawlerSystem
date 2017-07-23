@@ -12,7 +12,7 @@ import org.jsoup.select.Elements;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.mezhou887.util.Constants.TIME_INTERVAL;
+import static com.mezhou887.util.ZhiHuConstants.TIME_INTERVAL;
 
 public class Ip181ProxyListPageParser implements ProxyListPageParser {
     @Override

@@ -7,7 +7,7 @@ import com.mezhou887.proxy.entity.Direct;
 import com.mezhou887.proxy.entity.Proxy;
 import com.mezhou887.proxy.site.ProxyListPageParserFactory;
 import com.mezhou887.util.Config;
-import com.mezhou887.util.Constants;
+import com.mezhou887.util.ZhiHuConstants;
 import com.mezhou887.util.HttpClientUtil;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
@@ -38,6 +38,7 @@ public class ProxyPageTask implements Runnable {
 		this.url = url;
 		this.proxyFlag = proxyFlag;
 	}
+	
 	public void run(){
 		long requestStartTime = System.currentTimeMillis();
 		HttpGet tempRequest = null;
@@ -72,7 +73,7 @@ public class ProxyPageTask implements Runnable {
 			retry();
 		} finally {
 			if(currentProxy != null){
-				currentProxy.setTimeInterval(Constants.TIME_INTERVAL);
+				currentProxy.setTimeInterval(ZhiHuConstants.TIME_INTERVAL);
 				proxyQueue.add(currentProxy);
 			}
 			if (tempRequest != null){

@@ -6,7 +6,7 @@ import com.mezhou887.proxy.site.ip181.Ip181ProxyListPageParser;
 import com.mezhou887.proxy.site.ip66.Ip66ProxyListPageParser;
 import com.mezhou887.proxy.site.mimiip.MimiipProxyListPageParser;
 import com.mezhou887.proxy.site.xicidaili.XicidailiProxyListPageParser;
-import com.mezhou887.util.Constants;
+import com.mezhou887.util.ZhiHuConstants;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -44,7 +44,7 @@ public class ProxyPool {
                 proxyMap.put("http://www.66ip.cn/areaindex_" + j + "/" + i + ".html", Ip66ProxyListPageParser.class);
             }
         }
-        proxyQueue.add(new Direct(Constants.TIME_INTERVAL));
+        proxyQueue.add(new Direct(ZhiHuConstants.TIME_INTERVAL));
     }
 
 }

@@ -6,25 +6,23 @@ import com.mezhou887.proxy.entity.Proxy;
 import com.mezhou887.proxy.task.ProxyPageTask;
 import com.mezhou887.proxy.task.ProxySerializeTask;
 import com.mezhou887.util.Config;
-import com.mezhou887.util.Constants;
+import com.mezhou887.util.ZhiHuConstants;
 import com.mezhou887.util.HttpClientUtil;
 import com.mezhou887.util.SimpleThreadPoolExecutor;
 import com.mezhou887.util.ThreadPoolMonitor;
-import com.mezhou887.zhihu.entity.Page;
 
 import org.apache.log4j.Logger;
 
-import java.util.HashSet;
-import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-public class ProxyHttpClient extends AbstractHttpClient implements IHttpClient {
+public class ProxyHttpClient extends AbstractHttpClient implements IHttpClient{
     private static final Logger logger = Logger.getLogger(ProxyHttpClient.class);
-    private volatile static ProxyHttpClient instance;
-    public static Set<Page> downloadFailureProxyPageSet = new HashSet<>(ProxyPool.proxyMap.size());
 
+    // 单例模式
+    // 定义一个静态私有变量(不初始化，不使用final关键字，使用volatile保证了多线程访问时instance变量的可见性，避免了instance初始化时其他变量属性还没赋值完时，被另外线程调用)
+    private static volatile ProxyHttpClient instance;
     public static ProxyHttpClient getInstance(){
         if (instance == null){
             synchronized (ProxyHttpClient.class){
@@ -65,7 +63,7 @@ public class ProxyHttpClient extends AbstractHttpClient implements IHttpClient {
                 if (p == null){
                     continue;
                 }
-                p.setTimeInterval(Constants.TIME_INTERVAL);
+                p.setTimeInterval(ZhiHuConstants.TIME_INTERVAL);
                 p.setFailureTimes(0);
                 p.setSuccessfulTimes(0);
                 long nowTime = System.currentTimeMillis();
@@ -116,11 +114,8 @@ public class ProxyHttpClient extends AbstractHttpClient implements IHttpClient {
     public ThreadPoolExecutor getProxyDownloadThreadExecutor() {
         return proxyDownloadThreadExecutor;
     }
-	@Override
-	public void initHttpClient() {
-		
-	}
-	@Override
+
+    @Override
 	public void startCrawl(String url) {
 		
 	}

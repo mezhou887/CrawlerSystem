@@ -3,7 +3,7 @@ package com.mezhou887.zhihu.task;
 
 import com.mezhou887.parse.DetailPageParser;
 import com.mezhou887.util.Config;
-import com.mezhou887.util.Constants;
+import com.mezhou887.util.ZhiHuConstants;
 import com.mezhou887.util.SimpleInvocationHandler;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
@@ -51,7 +51,7 @@ public class DetailPageTask extends ZhihuPageTask {
     }
     
     public String formatUserFolloweesUrl(String userToken, int offset){
-        String url = Constants.INDEX_URL + "/api/v4/members/" + userToken + "/followees?include=data%5B*%5D.answer_count%2Carticles_count%2Cfollower_count%2C" +
+        String url = ZhiHuConstants.INDEX_URL + "/api/v4/members/" + userToken + "/followees?include=data%5B*%5D.answer_count%2Carticles_count%2Cfollower_count%2C" +
                 "is_followed%2Cis_following%2Cbadge%5B%3F(type%3Dbest_answerer)%5D.topics&offset=" + offset + "&limit=20";
         return url;
     }

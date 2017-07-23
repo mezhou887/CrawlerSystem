@@ -1,6 +1,6 @@
 package com.mezhou887.system.task;
 
-import com.mezhou887.util.Constants;
+import com.mezhou887.util.ZhiHuConstants;
 import com.mezhou887.util.HttpClientUtil;
 import com.mezhou887.util.ProxyUtil;
 import com.mezhou887.proxy.ProxyPool;
@@ -100,7 +100,7 @@ public abstract class AbstractPageTask implements Runnable {
 				tempRequest.releaseConnection();
 			}
 			if (currentProxy != null && !ProxyUtil.isDiscardProxy(currentProxy)){
-				currentProxy.setTimeInterval(Constants.TIME_INTERVAL);
+				currentProxy.setTimeInterval(ZhiHuConstants.TIME_INTERVAL);
 				ProxyPool.proxyQueue.add(currentProxy);
 			}
 		}

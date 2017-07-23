@@ -1,23 +1,13 @@
 package com.mezhou887.crawler.httpclient;
 
-
+// 需重构
 public interface IHttpClient {
 
-    /**
-     * 初始化客户端
-     * 模拟登录，持久化Cookie到本地
-     * 不用以后每次都登录
-     */
-    abstract void initHttpClient();
-
-    /**
-     * 爬虫入口
-     *
-     * @param url
-     */
+    // 爬虫入口
     void startCrawl(String url);
-    /**
-     * 爬虫入口
-     */
+    
+    // 爬虫入口
     void startCrawl();
+    
+    // 爬虫停止
 }

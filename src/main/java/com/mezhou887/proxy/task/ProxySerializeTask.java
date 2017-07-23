@@ -16,7 +16,7 @@ public class ProxySerializeTask implements Runnable{
     private static Logger logger = Logger.getLogger(ProxySerializeTask.class);
     @Override
     public void run() {
-        while (!ZhiHuHttpClient.isStop){
+        while (!ZhiHuHttpClient.isStop){ // 需重构 
             try {
                 Thread.sleep(1000 * 60 * 1);
             } catch (InterruptedException e) {

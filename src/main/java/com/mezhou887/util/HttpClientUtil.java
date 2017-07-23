@@ -32,6 +32,8 @@ import org.apache.http.ssl.SSLContexts;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 
+import com.mezhou887.zhihu.entity.Page;
+
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLException;
 import java.io.*;
@@ -43,7 +45,6 @@ import java.security.cert.X509Certificate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 /**
  * HttpClient工具类
@@ -80,7 +81,7 @@ public class HttpClientUtil {
             PoolingHttpClientConnectionManager connManager =
                     new PoolingHttpClientConnectionManager(socketFactoryRegistry);
 
-            SocketConfig socketConfig = SocketConfig.custom().setSoTimeout(Constants.TIMEOUT).setTcpNoDelay(true).build();
+            SocketConfig socketConfig = SocketConfig.custom().setSoTimeout(ZhiHuConstants.TIMEOUT).setTcpNoDelay(true).build();
             connManager.setDefaultSocketConfig(socketConfig);
 
             ConnectionConfig connectionConfig =
@@ -123,9 +124,9 @@ public class HttpClientUtil {
             }
             httpClient = httpClientBuilder.build();
 
-            requestConfig = RequestConfig.custom().setSocketTimeout(Constants.TIMEOUT).
-					setConnectTimeout(Constants.TIMEOUT).
-					setConnectionRequestTimeout(Constants.TIMEOUT).
+            requestConfig = RequestConfig.custom().setSocketTimeout(ZhiHuConstants.TIMEOUT).
+					setConnectTimeout(ZhiHuConstants.TIMEOUT).
+					setConnectionRequestTimeout(ZhiHuConstants.TIMEOUT).
 					setCookieSpec(CookieSpecs.STANDARD).
 					build();
         } catch (Exception e) {
@@ -149,8 +150,7 @@ public class HttpClientUtil {
 	 * @param encoding 字符编码
      * @return 网页内容
      */
-	public static String getWebPage(HttpRequestBase request
-			, String encoding) throws IOException {
+	public static String getWebPage(HttpRequestBase request, String encoding) throws IOException {
 		CloseableHttpResponse response = null;
 		response = getResponse(request);
 		logger.info("status---" + response.getStatusLine().getStatusCode());
@@ -162,7 +162,7 @@ public class HttpClientUtil {
 		if (request.getConfig() == null){
 			request.setConfig(requestConfig);
 		}
-		request.setHeader("User-Agent", Constants.userAgentArray[new Random().nextInt(Constants.userAgentArray.length)]);
+		request.setHeader("User-Agent", UserAgentUtil.randomUserAgent());
 		HttpClientContext httpClientContext = HttpClientContext.create();
 		httpClientContext.setCookieStore(cookieStore);
 		CloseableHttpResponse response = httpClient.execute(request, httpClientContext);
@@ -172,6 +172,16 @@ public class HttpClientUtil {
 //		}
 		return response;
 	}
+	
+	public static Page getPage(HttpRequestBase request) throws IOException {
+        CloseableHttpResponse response = getResponse(request);
+        Page page = new Page();
+        page.setStatusCode(response.getStatusLine().getStatusCode());
+        page.setHtml(EntityUtils.toString(response.getEntity()));
+        page.setUrl(request.getURI().toString());
+        return page;
+	}
+	
 	public static CloseableHttpResponse getResponse(String url) throws IOException {
 		HttpGet request = new HttpGet(url);
 		return getResponse(request);
@@ -322,14 +332,11 @@ public class HttpClientUtil {
 		}
 		request.setEntity(entity);
 	}
-	public static org.apache.http.client.config.RequestConfig.Builder getRequestConfigBuilder(){
-		return RequestConfig.custom().setSocketTimeout(Constants.TIMEOUT).
-				setConnectTimeout(Constants.TIMEOUT).
-				setConnectionRequestTimeout(Constants.TIMEOUT).
+	public static RequestConfig.Builder getRequestConfigBuilder(){
+		return RequestConfig.custom().setSocketTimeout(ZhiHuConstants.TIMEOUT).
+				setConnectTimeout(ZhiHuConstants.TIMEOUT).
+				setConnectionRequestTimeout(ZhiHuConstants.TIMEOUT).
 				setCookieSpec(CookieSpecs.STANDARD);
 	}
-	public static void main(String args []){
-		String s = "{    \"r\": 1,    \"errcode\": 100000,        \"data\": {\"account\":\"\\u5e10\\u53f7\\u6216\\u5bc6\\u7801\\u9519\\u8bef\"},            \"msg\": \"\\u8be5\\u624b\\u673a\\u53f7\\u5c1a\\u672a\\u6ce8\\u518c\\u77e5\\u4e4e";
-		logger.info(decodeUnicode(s));
-	}
+	
 }

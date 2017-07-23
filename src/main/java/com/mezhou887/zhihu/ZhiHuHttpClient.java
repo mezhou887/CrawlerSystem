@@ -20,18 +20,20 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import com.mezhou887.util.Constants;
+import com.mezhou887.util.ZhiHuConstants;
 
 public class ZhiHuHttpClient extends AbstractHttpClient implements IHttpClient {
 	
     private static Logger logger = Logger.getLogger(ZhiHuHttpClient.class);
-    private volatile static ZhiHuHttpClient instance;
-
     // 统计用户数量
     public static AtomicInteger parseUserCount = new AtomicInteger(0);
     private static long startTime = System.currentTimeMillis();
     public static volatile boolean isStop = false;
 
+    // request　header 获取列表页时，必须带上
+    private static String authorization;    
+    
+    private static volatile ZhiHuHttpClient instance;
     public static ZhiHuHttpClient getInstance(){
         if (instance == null){
             synchronized (ZhiHuHttpClient.class){
@@ -42,35 +44,19 @@ public class ZhiHuHttpClient extends AbstractHttpClient implements IHttpClient {
         }
         return instance;
     }
-    /**
-     * 详情页下载线程池
-     */
+    
+    // 详情页下载线程池
     private ThreadPoolExecutor detailPageThreadPool;
-    /**
-     * 列表页下载线程池
-     */
+    // 列表页下载线程池
     private ThreadPoolExecutor listPageThreadPool;
-    /**
-     * 详情列表页下载线程池
-     */
+    // 详情列表页下载线程池
     private ThreadPoolExecutor detailListPageThreadPool;
-    /**
-     * request　header
-     * 获取列表页时，必须带上
-     */
-    private static String authorization;
+
+
     private ZhiHuHttpClient() {
-        initHttpClient();
         intiThreadPool();
     }
-    /**
-     * 初始化HttpClient
-     */
-    @Override
-    public void initHttpClient() {
-//        ZhiHuDao1Imp.DBTablesInit();
-    }
-
+    
     /**
      * 初始化线程池
      */
@@ -95,7 +81,7 @@ public class ZhiHuHttpClient extends AbstractHttpClient implements IHttpClient {
         authorization = initAuthorization();
 
         String startToken = Config.startUserToken;
-        String startUrl = String.format(Constants.USER_FOLLOWEES_URL, startToken, 0);
+        String startUrl = String.format(ZhiHuConstants.USER_FOLLOWEES_URL, startToken, 0);
         HttpGet request = new HttpGet(startUrl);
         request.setHeader("authorization", "oauth " + ZhiHuHttpClient.getAuthorization());
         detailListPageThreadPool.execute(new DetailListPageTask(request, Config.isProxy));

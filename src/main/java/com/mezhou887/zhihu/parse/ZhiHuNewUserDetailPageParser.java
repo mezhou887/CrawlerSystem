@@ -3,7 +3,7 @@ package com.mezhou887.zhihu.parse;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.PathNotFoundException;
 import com.mezhou887.parse.DetailPageParser;
-import com.mezhou887.util.Constants;
+import com.mezhou887.util.ZhiHuConstants;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
 import com.mezhou887.zhihu.entity.User;
@@ -46,7 +46,7 @@ public class ZhiHuNewUserDetailPageParser implements DetailPageParser {
         User user = new User();
         String userToken = getUserToken(page.getUrl());
         user.setUserToken(userToken);
-        user.setUrl(Constants.INDEX_URL + "/people/" + userToken);//用户主页
+        user.setUrl(ZhiHuConstants.INDEX_URL + "/people/" + userToken);//用户主页
         getUserByJson(user, userToken, doc.select("[data-state]").first().attr("data-state"));
         return user;
     }
@@ -113,7 +113,7 @@ public class ZhiHuNewUserDetailPageParser implements DetailPageParser {
      * @return
      */
     private String getUserToken(String url){
-        Pattern pattern = Pattern.compile(Constants.INDEX_URL + "/[a-z]+/(.*)/following");
+        Pattern pattern = Pattern.compile(ZhiHuConstants.INDEX_URL + "/[a-z]+/(.*)/following");
         Matcher matcher = pattern.matcher(url);
         String userId = null;
         if(matcher.find()){

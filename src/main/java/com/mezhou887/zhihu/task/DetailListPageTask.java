@@ -4,7 +4,7 @@ package com.mezhou887.zhihu.task;
 import com.mezhou887.crawler.ConnectionManager;
 import com.mezhou887.parse.ListPageParser;
 import com.mezhou887.util.Config;
-import com.mezhou887.util.Constants;
+import com.mezhou887.util.ZhiHuConstants;
 import com.mezhou887.util.Md5Util;
 import com.mezhou887.util.SimpleInvocationHandler;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
@@ -71,7 +71,7 @@ public class DetailListPageTask extends ZhihuPageTask {
                 if (zhiHuHttpClient.getDetailListPageThreadPool().getQueue().size() > 1000){
                     continue;
                 }
-                String nextUrl = String.format(Constants.USER_FOLLOWEES_URL, u.getUserToken(), j * 20);
+                String nextUrl = String.format(ZhiHuConstants.USER_FOLLOWEES_URL, u.getUserToken(), j * 20);
                 if (zhiHuDao1.insertUrl(cn, Md5Util.Convert2Md5(nextUrl)) ||
                         zhiHuHttpClient.getDetailListPageThreadPool().getActiveCount() == 1){
                     //防止死锁

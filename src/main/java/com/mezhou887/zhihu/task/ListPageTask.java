@@ -3,7 +3,7 @@ package com.mezhou887.zhihu.task;
 
 import com.jayway.jsonpath.JsonPath;
 import com.mezhou887.util.Config;
-import com.mezhou887.util.Constants;
+import com.mezhou887.util.ZhiHuConstants;
 import com.mezhou887.zhihu.entity.Page;
 
 import org.apache.http.client.methods.HttpRequestBase;
@@ -40,7 +40,7 @@ public class ListPageTask extends ZhihuPageTask {
     }
     
     private void handleUserToken(String userToken){
-        String url = Constants.INDEX_URL + "/people/" + userToken + "/following"; //范例: https://www.zhihu.com/people/wo-yan-chen-mo/following
+        String url = ZhiHuConstants.INDEX_URL + "/people/" + userToken + "/following"; //范例: https://www.zhihu.com/people/wo-yan-chen-mo/following
         boolean existUserFlag = zhiHuDao1.isExistUser(userToken);
         while (zhiHuHttpClient.getDetailPageThreadPool().getQueue().size() > 1000){ //为什么要大于1000
             try {

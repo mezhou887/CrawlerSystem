@@ -12,7 +12,7 @@ import com.mezhou887.proxy.entity.Proxy;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.mezhou887.util.Constants.TIME_INTERVAL;
+import static com.mezhou887.util.ZhiHuConstants.TIME_INTERVAL;
 
 public class XicidailiProxyListPageParser implements ProxyListPageParser{
     @Override
