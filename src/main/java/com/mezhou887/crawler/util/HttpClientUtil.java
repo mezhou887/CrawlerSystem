@@ -296,7 +296,6 @@ public class HttpClientUtil {
 	public static String decodeUnicode(String dataStr) {
 		int start = 0;
 		int end = 0;
-		final StringBuffer buffer = new StringBuffer();
 		while (start > -1) {
 			start = dataStr.indexOf("\\u", start - (6 - 1));
 			if (start == -1){

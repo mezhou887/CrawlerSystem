@@ -8,7 +8,7 @@ import com.mezhou887.proxy.ProxyPool;
 import com.mezhou887.proxy.entity.Direct;
 import com.mezhou887.proxy.entity.Proxy;
 import com.mezhou887.proxy.parse.ProxyListPageParser;
-import com.mezhou887.proxy.site.ProxyListPageParserFactory;
+import com.mezhou887.proxy.parse.ProxyListPageParserFactory;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
 
