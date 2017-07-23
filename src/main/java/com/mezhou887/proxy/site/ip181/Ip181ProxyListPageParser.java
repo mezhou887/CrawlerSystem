@@ -1,8 +1,8 @@
 package com.mezhou887.proxy.site.ip181;
 
 
-import com.mezhou887.proxy.ProxyListPageParser;
 import com.mezhou887.proxy.entity.Proxy;
+import com.mezhou887.proxy.parse.ProxyListPageParser;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

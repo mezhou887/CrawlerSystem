@@ -5,8 +5,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-import com.mezhou887.proxy.ProxyListPageParser;
 import com.mezhou887.proxy.entity.Proxy;
+import com.mezhou887.proxy.parse.ProxyListPageParser;
 
 import static com.mezhou887.crawler.util.ZhiHuConstants.TIME_INTERVAL;
 

@@ -27,8 +27,8 @@ public class ProxyPool {
     /**
      * 代理池延迟队列
      */
-    public final static DelayQueue<Proxy> proxyQueue = new DelayQueue();
-    public final static Map<String, Class> proxyMap = new HashMap<>();
+    public final static DelayQueue<Proxy> proxyQueue = new DelayQueue<Proxy>();
+    public final static Map<String, Class> proxyMap = new HashMap<String, Class>();
     static {
         int pages = 8;
         for(int i = 1; i <= pages; i++){

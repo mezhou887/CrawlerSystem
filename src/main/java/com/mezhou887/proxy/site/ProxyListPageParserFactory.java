@@ -1,20 +1,18 @@
 package com.mezhou887.proxy.site;
 
-
-
 import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import com.mezhou887.proxy.ProxyListPageParser;
+import com.mezhou887.proxy.parse.ProxyListPageParser;
 
 public class ProxyListPageParserFactory {
 	private static Logger logger = Logger.getLogger(ProxyListPageParserFactory.class);
     private static Map<String, ProxyListPageParser> map  = new HashMap<>();
+
     public static ProxyListPageParser getProxyListPageParser(Class clazz){
         String parserName = clazz.getSimpleName();
-        ProxyListPageParser proxyListPageParser = null;
         if (map.containsKey(parserName)){
             return map.get(parserName);
         }
