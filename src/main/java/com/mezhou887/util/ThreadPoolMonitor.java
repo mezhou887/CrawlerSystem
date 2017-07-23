@@ -7,7 +7,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 /**
  * 线程池工具类，监视ThreadPoolExecutor执行情况
  */
-public class ThreadPoolMonitor implements Runnable{
+public class ThreadPoolMonitor implements Runnable {
     private static Logger logger = Logger.getLogger(ThreadPoolMonitor.class);
     private ThreadPoolExecutor executor;
     public static volatile boolean isStopMonitor = false;
@@ -19,8 +19,7 @@ public class ThreadPoolMonitor implements Runnable{
 
     public void run(){
         while(!isStopMonitor){
-            logger.debug(name +
-                    String.format("[monitor] [%d/%d] Active: %d, Completed: %d, queueSize: %d, Task: %d, isShutdown: %s, isTerminated: %s",
+            logger.debug(name + String.format("[monitor] [%d/%d] Active: %d, Completed: %d, queueSize: %d, Task: %d, isShutdown: %s, isTerminated: %s",
                             this.executor.getPoolSize(),
                             this.executor.getCorePoolSize(),
                             this.executor.getActiveCount(),

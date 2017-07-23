@@ -8,7 +8,7 @@ import com.mezhou887.zhihu.ZhiHuHttpClient;
  */
 public class Main {
     public static void main(String args []){
-//        ProxyHttpClient.getInstance().startCrawl();
+        ProxyHttpClient.getInstance().startCrawl();
         ZhiHuHttpClient.getInstance().startCrawl();
     }
 }
