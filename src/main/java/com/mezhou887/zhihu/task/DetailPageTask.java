@@ -45,15 +45,9 @@ public class DetailPageTask extends ZhihuPageTask {
 	    zhiHuDao1.insertUser(u);
         parseUserCount.incrementAndGet();
         for(int i = 0;i < u.getFollowees() / 20 + 1;i++) {
-            String userFolloweesUrl = formatUserFolloweesUrl(u.getUserToken(), 20 * i);
+            String userFolloweesUrl = ZhiHuConstants.formatUserFolloweesUrl(u.getUserToken(), 20 * i);
             handleUrl(userFolloweesUrl);
         }
-    }
-    
-    public String formatUserFolloweesUrl(String userToken, int offset){
-        String url = ZhiHuConstants.INDEX_URL + "/api/v4/members/" + userToken + "/followees?include=data%5B*%5D.answer_count%2Carticles_count%2Cfollower_count%2C" +
-                "is_followed%2Cis_following%2Cbadge%5B%3F(type%3Dbest_answerer)%5D.topics&offset=" + offset + "&limit=20";
-        return url;
     }
     
     private void handleUrl(String url){

@@ -17,7 +17,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-public class ProxyHttpClient extends AbstractHttpClient implements IHttpClient{
+public class ProxyHttpClient extends AbstractHttpClient implements IHttpClient {
     private static final Logger logger = Logger.getLogger(ProxyHttpClient.class);
 
     // 单例模式

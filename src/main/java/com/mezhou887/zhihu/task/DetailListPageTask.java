@@ -31,9 +31,8 @@ import static com.mezhou887.zhihu.ZhiHuHttpClient.parseUserCount;
 public class DetailListPageTask extends ZhihuPageTask {
     private static Logger logger = Logger.getLogger(DetailListPageTask.class);
     private static ListPageParser proxyUserListPageParser;
-    /**
-     * Thread-数据库连接
-     */
+    
+    // Thread-数据库连接
     private static Map<Thread, Connection> connectionMap = new ConcurrentHashMap<>();
     static {
         proxyUserListPageParser = getProxyUserListPageParser();
@@ -72,8 +71,7 @@ public class DetailListPageTask extends ZhihuPageTask {
                     continue;
                 }
                 String nextUrl = String.format(ZhiHuConstants.USER_FOLLOWEES_URL, u.getUserToken(), j * 20);
-                if (zhiHuDao1.insertUrl(cn, Md5Util.Convert2Md5(nextUrl)) ||
-                        zhiHuHttpClient.getDetailListPageThreadPool().getActiveCount() == 1){
+                if (zhiHuDao1.insertUrl(cn, Md5Util.Convert2Md5(nextUrl)) || zhiHuHttpClient.getDetailListPageThreadPool().getActiveCount() == 1){
                     //防止死锁
                     HttpGet request = new HttpGet(nextUrl);
                     request.setHeader("authorization", "oauth " + ZhiHuHttpClient.getAuthorization());
