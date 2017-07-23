@@ -45,7 +45,7 @@ public class DetailPageTask extends ZhihuPageTask {
 	    zhiHuDao1.insertUser(u);
         parseUserCount.incrementAndGet();
         for(int i = 0;i < u.getFollowees() / 20 + 1;i++) {
-            String userFolloweesUrl = ZhiHuConstants.formatUserFolloweesUrl(u.getUserToken(), 20 * i);
+        	String userFolloweesUrl = String.format(ZhiHuConstants.USER_FOLLOWEES_URL_V2, u.getUserToken(), 20*i);
             handleUrl(userFolloweesUrl);
         }
     }
