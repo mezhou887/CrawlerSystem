@@ -1,14 +1,14 @@
 package com.mezhou887.proxy.task;
 
+import com.mezhou887.crawler.util.Config;
+import com.mezhou887.crawler.util.HttpClientUtil;
+import com.mezhou887.crawler.util.ZhiHuConstants;
 import com.mezhou887.proxy.ProxyHttpClient;
 import com.mezhou887.proxy.ProxyListPageParser;
 import com.mezhou887.proxy.ProxyPool;
 import com.mezhou887.proxy.entity.Direct;
 import com.mezhou887.proxy.entity.Proxy;
 import com.mezhou887.proxy.site.ProxyListPageParserFactory;
-import com.mezhou887.util.Config;
-import com.mezhou887.util.ZhiHuConstants;
-import com.mezhou887.util.HttpClientUtil;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
 

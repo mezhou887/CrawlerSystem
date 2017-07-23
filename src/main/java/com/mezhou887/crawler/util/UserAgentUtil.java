@@ -1,4 +1,4 @@
-package com.mezhou887.util;
+package com.mezhou887.crawler.util;
 
 import java.util.Random;
 

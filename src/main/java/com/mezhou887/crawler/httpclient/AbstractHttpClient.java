@@ -7,7 +7,7 @@ import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 
-import com.mezhou887.util.HttpClientUtil;
+import com.mezhou887.crawler.util.HttpClientUtil;
 import com.mezhou887.zhihu.entity.Page;
 
 import java.io.IOException;

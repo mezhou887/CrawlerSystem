@@ -1,12 +1,12 @@
 package com.mezhou887.proxy;
 
+import com.mezhou887.crawler.util.ZhiHuConstants;
 import com.mezhou887.proxy.entity.Direct;
 import com.mezhou887.proxy.entity.Proxy;
 import com.mezhou887.proxy.site.ip181.Ip181ProxyListPageParser;
 import com.mezhou887.proxy.site.ip66.Ip66ProxyListPageParser;
 import com.mezhou887.proxy.site.mimiip.MimiipProxyListPageParser;
 import com.mezhou887.proxy.site.xicidaili.XicidailiProxyListPageParser;
-import com.mezhou887.util.ZhiHuConstants;
 
 import java.util.HashMap;
 import java.util.HashSet;

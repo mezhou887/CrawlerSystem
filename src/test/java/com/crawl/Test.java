@@ -2,9 +2,9 @@ package com.crawl;
 
 import org.apache.log4j.Logger;
 
+import com.mezhou887.crawler.util.HttpClientUtil;
 import com.mezhou887.proxy.ProxyPool;
 import com.mezhou887.proxy.entity.Proxy;
-import com.mezhou887.util.HttpClientUtil;
 
 public class Test {
 	private static Logger logger = Logger.getLogger(Test.class);

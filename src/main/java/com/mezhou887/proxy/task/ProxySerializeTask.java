@@ -1,10 +1,10 @@
 package com.mezhou887.proxy.task;
 
+import com.mezhou887.crawler.util.Config;
+import com.mezhou887.crawler.util.HttpClientUtil;
+import com.mezhou887.crawler.util.ProxyUtil;
 import com.mezhou887.proxy.ProxyPool;
 import com.mezhou887.proxy.entity.Proxy;
-import com.mezhou887.util.Config;
-import com.mezhou887.util.HttpClientUtil;
-import com.mezhou887.util.ProxyUtil;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 
 import org.apache.log4j.Logger;

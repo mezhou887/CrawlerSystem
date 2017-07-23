@@ -3,7 +3,7 @@ package com.crawl;
 import org.apache.http.HttpHost;
 import org.apache.http.client.methods.HttpGet;
 
-import com.mezhou887.util.HttpClientUtil;
+import com.mezhou887.crawler.util.HttpClientUtil;
 
 import java.io.IOException;
 

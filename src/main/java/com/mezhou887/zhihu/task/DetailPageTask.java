@@ -2,9 +2,9 @@ package com.mezhou887.zhihu.task;
 
 
 import com.mezhou887.crawler.parse.DetailPageParser;
-import com.mezhou887.util.Config;
-import com.mezhou887.util.ZhiHuConstants;
-import com.mezhou887.util.SimpleInvocationHandler;
+import com.mezhou887.crawler.util.Config;
+import com.mezhou887.crawler.util.SimpleInvocationHandler;
+import com.mezhou887.crawler.util.ZhiHuConstants;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
 import com.mezhou887.zhihu.entity.User;

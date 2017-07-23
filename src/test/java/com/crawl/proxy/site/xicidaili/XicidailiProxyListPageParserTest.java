@@ -6,10 +6,10 @@ import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.junit.Test;
 
+import com.mezhou887.crawler.util.HttpClientUtil;
 import com.mezhou887.proxy.ProxyHttpClient;
 import com.mezhou887.proxy.entity.Proxy;
 import com.mezhou887.proxy.site.xicidaili.XicidailiProxyListPageParser;
-import com.mezhou887.util.HttpClientUtil;
 import com.mezhou887.zhihu.entity.Page;
 
 import java.io.IOException;

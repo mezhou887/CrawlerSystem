@@ -1,9 +1,9 @@
 package com.mezhou887.proxy.task;
 
+import com.mezhou887.crawler.util.HttpClientUtil;
+import com.mezhou887.crawler.util.ZhiHuConstants;
 import com.mezhou887.proxy.ProxyPool;
 import com.mezhou887.proxy.entity.Proxy;
-import com.mezhou887.util.HttpClientUtil;
-import com.mezhou887.util.ZhiHuConstants;
 import com.mezhou887.zhihu.entity.Page;
 
 import org.apache.http.HttpHost;

@@ -2,8 +2,8 @@ package com.mezhou887.zhihu.task;
 
 
 import com.jayway.jsonpath.JsonPath;
-import com.mezhou887.util.Config;
-import com.mezhou887.util.ZhiHuConstants;
+import com.mezhou887.crawler.util.Config;
+import com.mezhou887.crawler.util.ZhiHuConstants;
 import com.mezhou887.zhihu.entity.Page;
 
 import org.apache.http.client.methods.HttpRequestBase;

@@ -5,10 +5,11 @@ import com.mezhou887.zhihu.task.DetailPageTask;
 import com.mezhou887.zhihu.task.GeneralPageTask;
 import com.mezhou887.crawler.httpclient.AbstractHttpClient;
 import com.mezhou887.crawler.httpclient.IHttpClient;
+import com.mezhou887.crawler.util.Config;
+import com.mezhou887.crawler.util.SimpleThreadPoolExecutor;
+import com.mezhou887.crawler.util.ThreadPoolMonitor;
+import com.mezhou887.crawler.util.ZhiHuConstants;
 import com.mezhou887.proxy.ProxyHttpClient;
-import com.mezhou887.util.Config;
-import com.mezhou887.util.SimpleThreadPoolExecutor;
-import com.mezhou887.util.ThreadPoolMonitor;
 
 import org.apache.http.client.methods.HttpGet;
 import org.apache.log4j.Logger;
@@ -20,7 +21,6 @@ import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import com.mezhou887.util.ZhiHuConstants;
 
 public class ZhiHuHttpClient extends AbstractHttpClient implements IHttpClient {
 	

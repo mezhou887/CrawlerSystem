@@ -9,10 +9,10 @@ import org.jsoup.select.Elements;
 import com.mezhou887.proxy.ProxyListPageParser;
 import com.mezhou887.proxy.entity.Proxy;
 
+import static com.mezhou887.crawler.util.ZhiHuConstants.TIME_INTERVAL;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import static com.mezhou887.util.ZhiHuConstants.TIME_INTERVAL;
 
 public class XicidailiProxyListPageParser implements ProxyListPageParser{
     @Override

@@ -2,14 +2,14 @@ package com.mezhou887.proxy;
 
 import com.mezhou887.crawler.httpclient.AbstractHttpClient;
 import com.mezhou887.crawler.httpclient.IHttpClient;
+import com.mezhou887.crawler.util.Config;
+import com.mezhou887.crawler.util.HttpClientUtil;
+import com.mezhou887.crawler.util.SimpleThreadPoolExecutor;
+import com.mezhou887.crawler.util.ThreadPoolMonitor;
+import com.mezhou887.crawler.util.ZhiHuConstants;
 import com.mezhou887.proxy.entity.Proxy;
 import com.mezhou887.proxy.task.ProxyPageTask;
 import com.mezhou887.proxy.task.ProxySerializeTask;
-import com.mezhou887.util.Config;
-import com.mezhou887.util.ZhiHuConstants;
-import com.mezhou887.util.HttpClientUtil;
-import com.mezhou887.util.SimpleThreadPoolExecutor;
-import com.mezhou887.util.ThreadPoolMonitor;
 
 import org.apache.log4j.Logger;
 

@@ -1,7 +1,7 @@
 package com.mezhou887.zhihu.dao;
 
 
-import com.mezhou887.util.Config;
+import com.mezhou887.crawler.util.Config;
 import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
 import org.apache.log4j.Logger;
 

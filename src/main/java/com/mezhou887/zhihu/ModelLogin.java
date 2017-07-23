@@ -4,8 +4,8 @@ import net.minidev.json.JSONObject;
 import net.minidev.json.JSONValue;
 import org.apache.log4j.Logger;
 
-import com.mezhou887.util.Config;
-import com.mezhou887.util.HttpClientUtil;
+import com.mezhou887.crawler.util.Config;
+import com.mezhou887.crawler.util.HttpClientUtil;
 
 import java.io.IOException;
 import java.util.*;
