@@ -2,7 +2,7 @@ package com.mezhou887.zhihu.parse;
 
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.PathNotFoundException;
-import com.mezhou887.parse.DetailPageParser;
+import com.mezhou887.crawler.parse.DetailPageParser;
 import com.mezhou887.util.ZhiHuConstants;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;

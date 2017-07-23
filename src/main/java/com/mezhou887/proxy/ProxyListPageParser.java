@@ -1,7 +1,7 @@
 package com.mezhou887.proxy;
 
 
-import com.mezhou887.parse.Parser;
+import com.mezhou887.crawler.parse.Parser;
 import com.mezhou887.proxy.entity.Proxy;
 
 import java.util.List;

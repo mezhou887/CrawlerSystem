@@ -1,13 +1,13 @@
 package com.mezhou887.zhihu.task;
 
 
-import com.mezhou887.crawler.ConnectionManager;
-import com.mezhou887.parse.ListPageParser;
+import com.mezhou887.crawler.parse.ListPageParser;
 import com.mezhou887.util.Config;
 import com.mezhou887.util.ZhiHuConstants;
 import com.mezhou887.util.Md5Util;
 import com.mezhou887.util.SimpleInvocationHandler;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
+import com.mezhou887.zhihu.dao.ConnectionManager;
 import com.mezhou887.zhihu.entity.Page;
 import com.mezhou887.zhihu.entity.User;
 import com.mezhou887.zhihu.parse.ZhiHuUserListPageParser;

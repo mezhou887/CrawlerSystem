@@ -7,7 +7,7 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.util.EntityUtils;
 
-import com.mezhou887.system.task.AbstractPageTask;
+import com.mezhou887.crawler.task.AbstractPageTask;
 import com.mezhou887.util.HttpClientUtil;
 import com.mezhou887.util.SimpleInvocationHandler;
 import com.mezhou887.zhihu.ZhiHuHttpClient;

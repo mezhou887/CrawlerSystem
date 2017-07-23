@@ -4,7 +4,7 @@ package com.mezhou887.zhihu.parse;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
 import com.jayway.jsonpath.PathNotFoundException;
-import com.mezhou887.parse.ListPageParser;
+import com.mezhou887.crawler.parse.ListPageParser;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
 import com.mezhou887.zhihu.entity.Page;
 import com.mezhou887.zhihu.entity.User;

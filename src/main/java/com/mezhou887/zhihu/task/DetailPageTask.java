@@ -1,7 +1,7 @@
 package com.mezhou887.zhihu.task;
 
 
-import com.mezhou887.parse.DetailPageParser;
+import com.mezhou887.crawler.parse.DetailPageParser;
 import com.mezhou887.util.Config;
 import com.mezhou887.util.ZhiHuConstants;
 import com.mezhou887.util.SimpleInvocationHandler;
