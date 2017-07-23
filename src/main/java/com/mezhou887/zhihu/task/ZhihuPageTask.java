@@ -10,9 +10,9 @@ import org.apache.http.util.EntityUtils;
 import com.mezhou887.crawler.task.AbstractPageTask;
 import com.mezhou887.crawler.util.HttpClientUtil;
 import com.mezhou887.crawler.util.SimpleInvocationHandler;
+import com.mezhou887.remove.ZhiHuDao1;
+import com.mezhou887.remove.ZhiHuDao1Imp;
 import com.mezhou887.zhihu.ZhiHuHttpClient;
-import com.mezhou887.zhihu.dao.ZhiHuDao1;
-import com.mezhou887.zhihu.dao.ZhiHuDao1Imp;
 import com.mezhou887.zhihu.entity.Page;
 
 public abstract class ZhihuPageTask extends AbstractPageTask {
